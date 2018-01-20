@@ -26,7 +26,7 @@
     <div id="app">
 
 
-        div class="header">
+
         <div class="container"> <a class="navbar-brand" href="index.html"><i class="fa fa-paper-plane"></i> ONE</a>
             <div class="menu"> <a class="toggleMenu" href="#"><img src="/images/nav_icon.png" alt="" /> </a>
                 <ul class="nav" id="nav">
@@ -69,6 +69,16 @@
 
 
         @yield('content')
+
+
+    <div class="footer">
+        <div class="footer_bottom">
+            <div class="follow-us"> <a class="fa fa-facebook social-icon" href="#"></a> <a class="fa fa-twitter social-icon" href="#"></a> <a class="fa fa-linkedin social-icon" href="#"></a> <a class="fa fa-google-plus social-icon" href="#"></a> </div>
+            <div class="copy">
+                <p>Copyright &copy; 2015 Company Name. Design by <a href="http://www.templategarden.com" rel="nofollow">TemplateGarden</a></p>
+            </div>
+        </div>
+    </div>
 
         {!! Html::script('website/js/responsive-nav.js') !!}
         {!! Html::script('website/js/bootstrap.min.js') !!}
