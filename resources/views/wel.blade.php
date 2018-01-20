@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    test welcome
+    Welcome page
     @endsection
 
 @section('content')
