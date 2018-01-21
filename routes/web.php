@@ -15,11 +15,16 @@ Route::get('/', function () {
     return view('wel');
 });
 
-##########################
-// admin routes
-##########################
+#------------------------
+#                       #
+#      admin routes     #
+#                       #
+#------------------------
+Route::group(['middleware' => ['web','admin']], function(){
+    Route::get('/adminPanel' ,'AdminController@index');
+    Route::get('/adminPanel/users','UserController@index');
+});
 
-route::get('/adminPanel' ,'AdminController@index');
 
 
 Auth::routes();
