@@ -8,9 +8,10 @@ use App\User;
 
 class UserController extends Controller
 {
-    public function index(){
+    public function index(User $user){
 
-        return view('admin.user.index');
+        $user = User::all(); // select * from user table
+        return view('admin.user.index', compact('user'));
     }
 
     /* create function to return view add new user */
@@ -20,6 +21,7 @@ class UserController extends Controller
     }
 
 
+    /* add new user  */
     protected function store(AddUserRequestAdmin $request ,User $user )
     {
         $user->create([
@@ -28,8 +30,13 @@ class UserController extends Controller
             'password' => bcrypt($request->password),
         ]);
         return redirect('/adminPanel/users')->withFlashMessage('user added successfully');
-
     }
 
+
+    /* Edit to userInfo */
+    public function edit($id, User $user){
+        @$user = $user->find($id);
+        return view('admin.user.add',compact('user'));
+    }
 
 }

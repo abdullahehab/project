@@ -1,4 +1,4 @@
-<form class="form-horizontal" method="POST" action="{{ route('/adminPanel/users') }}">
+
     {{ csrf_field() }}
 
     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -58,4 +58,3 @@
             </button>
         </div>
     </div>
-</form>

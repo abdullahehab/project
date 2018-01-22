@@ -35,7 +35,9 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        @include('admin.user.form')
+                        <form class="form-horizontal" method="POST" action="{{ route('/adminPanel/users') }}">
+                            @include('admin.user.form')
+                        </form>
                     </div>
                 </div>
             </div>
