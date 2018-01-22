@@ -469,6 +469,7 @@
                     <!-- /.box-body -->
                 </div>
             <!-- /.col -->
+            </div>
         </div>
         <!-- /.row -->
     </section>
