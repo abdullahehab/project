@@ -46,7 +46,7 @@
 <body class="skin-blue sidebar-mini wysihtml5-supported">
 
 
-    <div class="wrapper">
+<div class="wrapper">
 
     <header class="main-header">
         <!-- Logo -->
@@ -79,7 +79,7 @@
                                     <li><!-- start message -->
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                                <img src="../../admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                                             </div>
                                             <h4>
                                                 Support Team
@@ -92,7 +92,7 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="admin/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                                                <img src="../../admin/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
                                             </div>
                                             <h4>
                                                 AdminLTE Design Team
@@ -104,7 +104,7 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="admin/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                                                <img src="../../admin/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
                                             </div>
                                             <h4>
                                                 Developers
@@ -116,7 +116,7 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="admin/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                                                <img src="../../admin/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
                                             </div>
                                             <h4>
                                                 Sales Department
@@ -128,7 +128,7 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="admin/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                                                <img src="../../admin/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
                                             </div>
                                             <h4>
                                                 Reviewers
@@ -265,13 +265,13 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <img src="../../admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                             <span class="hidden-xs">Alexander Pierce</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-                                <img src="admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <img src="../../admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                 <p>
                                     Alexander Pierce - Web Developer
@@ -319,7 +319,7 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src="../../admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
                     <p>{{Auth::user()->name}}</p>
@@ -340,18 +340,11 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN MENU</li>
-                <li class="active treeview">
-                    <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                        <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-                    </ul>
-                </li>
+
+
+            @include('admin.layouts.nav')
+
+
             </ul>
         </section>
         <!-- /.sidebar -->
