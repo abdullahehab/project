@@ -22,7 +22,7 @@ Route::get('/', function () {
 #------------------------
 Route::group(['middleware' => ['web','admin']], function(){
     Route::get('/adminPanel' ,'AdminController@index');
-    Route::get('/adminPanel/users','UserController@index');
+    Route::resource('/adminPanel/users','UserController');
 });
 
 
