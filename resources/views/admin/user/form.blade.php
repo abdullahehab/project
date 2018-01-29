@@ -5,12 +5,27 @@
         <label for="name" class="col-md-4 control-label">Name</label>
 
         <div class="col-md-6">
-            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+            {!! Form::text('name', null , ['class' => 'form-control']) !!}
 
             @if ($errors->has('name'))
                 <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
+                    <strong>{{ $errors->first('name') }}</strong>
+                </span>
+            @endif
+        </div>
+    </div>
+
+    {{-- Select admin or user --}}
+    <div class="form-group{{ $errors->has('admin') ? ' has-error' : '' }}">
+        <label for="name" class="col-md-4 control-label">Term</label>
+
+        <div class="col-md-6">
+            {!! Form::select('admin', ['0' => 'user' , '1'=> 'admin'] , null , ['class' => 'form-control']) !!}
+
+            @if ($errors->has('admin'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('admin') }}</strong>
+                </span>
             @endif
         </div>
     </div>
@@ -19,12 +34,12 @@
         <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
         <div class="col-md-6">
-            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+            {!! Form::text('email', null , ['class' => 'form-control']) !!}
 
             @if ($errors->has('email'))
                 <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                    <strong>{{ $errors->first('email') }}</strong>
+                </span>
             @endif
         </div>
     </div>
@@ -37,8 +52,8 @@
 
             @if ($errors->has('password'))
                 <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                    <strong>{{ $errors->first('password') }}</strong>
+                </span>
             @endif
         </div>
     </div>
@@ -54,7 +69,7 @@
     <div class="form-group">
         <div class="col-md-6 col-md-offset-4">
             <button type="submit" class="btn btn-primary">
-                Register
+                Done
             </button>
         </div>
     </div>

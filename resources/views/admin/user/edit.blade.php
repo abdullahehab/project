@@ -4,7 +4,7 @@
 
 Edit user Info
 
-    {{$user->name}}
+    ({{$user->name}})
 
 @endsection
 
@@ -17,16 +17,17 @@ Edit user Info
 
 <section class="content-header">
     <h1>
-        Add New User
+        Edit User Information
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{url('/adminPanel')}}"><i class="fa fa-dashboard"></i> Home </a></li>
         <li><a href="{{url('/adminPanel/users')}}">Member Control</a></li>
-        <li class="active"><a href="{{url('/adminPanel/users/'. $user->id .'edit')}}">
+        <li class="active"><a href="{{ url('/adminPanel/users/'. $user .'/edit') }}">
 
                 Edit user Info
+                ({{$user->name}})
 
-                {{$user->name}}
+
             </a></li>
     </ol>
 </section>
@@ -41,27 +42,24 @@ Edit user Info
                     <h3 class="box-title">
                         Edit user Info
 
-                        {{$user->name}}
+                        ({{$user->name}})
                     </h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('/adminPanel/users') }}">
+
+                    {!! Form::model($user ,['route' => ['users.update' , $user->id] ,'method' =>'PATCH']) !!}
                         @include('admin.user.form')
-                    </form>
+                    {!! Form::close() !!}
+
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-
-
-
 @endsection
 
 
 @section('footer')
-
 
 @endsection

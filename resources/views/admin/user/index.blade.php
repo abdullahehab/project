@@ -32,7 +32,7 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Hover Data Table</h3>
+                        <h3 class="box-title">All Users</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -44,18 +44,23 @@
                                 <th>Email</th>
                                 <th>Created at</th>
                                 <th>Degree</th>
+                                <th>Options</th>
                             </tr>
                             </thead>
                             <tbody>
 
                             @foreach($user as $info)
                             <tr>
-                                <td>{{$info->id}}</td>
+                                <td>{{ $info->id }}</td>
                                 <td>{{ $info->name }}</td>
                                 <td>{{ $info->email }}</td>
                                 <td>{{ $info->created_at }}</td>
                                 <td>
-                                    {{$info->admin ==1 ? 'manager' : 'user'}}
+                                    {{ $info->admin ==1 ? 'admin' : 'user' }}
+                                </td>
+                                <td>
+                                    <a  href="{{ url('/adminPanel/users/'.$info->id.'/edit')}}" class="btn btn-info" role="button">Edit</a>
+                                    <a  href="{{ url('/adminPanel/users/'.$info->id.'/delete')}}" class="btn btn-danger" role="button">Delete</a>
                                 </td>
                             </tr>
                              @endforeach
@@ -63,11 +68,12 @@
                             </tbody>
                             <tfoot>
                             <tr>
-                                <th>Rendering engine</th>
-                                <th>Browser</th>
-                                <th>Platform(s)</th>
-                                <th>Engine version</th>
-                                <th>CSS grade</th>
+                                <th>User ID</th>
+                                <th>User Name</th>
+                                <th>Email</th>
+                                <th>Created at</th>
+                                <th>Degree</th>
+                                <th>Options</th>
                             </tr>
                             </tfoot>
                         </table>

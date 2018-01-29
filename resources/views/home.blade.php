@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Welcome Guest
+    Welcome {{Auth::User()->name}}
     @endsection
 
 @section('content')

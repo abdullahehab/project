@@ -14,7 +14,7 @@
     <title>
         3akar
         |
-        @yield('title');
+        @yield('title')
     </title>
 
 
