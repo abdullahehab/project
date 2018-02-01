@@ -43,15 +43,19 @@ class UserController extends Controller
     public function update($id , Request $request){
         $updatedUser = User::find($id);
         $updatedUser->fill($request->all())->save();
-        return redirect('adminPanel/users');
+        return redirect('adminPanel/users')->withFlashMessage('User updated successfully');
     }
 
     /*change users password*/
     public function changePassword(Request $request){
-        $userUpdated = User::find($request->user-id);
+        $userUpdated = User::find($request->user_id);
         $password = bcrypt($request->password);
-        $userUpdated = fill(['only' => ['password' =>$password]])->save();
-        return redirect('/adminPanel/users')->withFlashMessage('Password changed     successfully');
+        $userUpdated->fill(['password' => $password])->save();
+        return redirect('/adminPanel/users')->withFlashMessage('Password changed successfully');
+    }
+    public function destroy($id){
+        $user = User::find($id)->delete();
+        return redirect('adminPanel/users')->withFlashMessage('User Deleted successfully');
     }
 
 }

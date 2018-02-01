@@ -74,9 +74,9 @@ Edit user Info
                 <!-- /.box-header -->
                 <div class="box-body">
 
-                    {!! Form::open( ['url' => '/adminPanel/users/changePassword/'. $user->id , 'method' => 'post' ]) !!}
+                    {!! Form::open( ['url' => '/adminPanel/users/changePassword/' , 'method' => 'post' ]) !!}
 
-                    <input type="hidden" value="{{ $user->id }}" name="user-id">
+                    <input type="hidden" value="{{ $user->id }}" name="user_id">
                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                         <label for="password" class="col-md-4 control-label">Password</label>
 
