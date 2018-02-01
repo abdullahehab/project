@@ -46,4 +46,12 @@ class UserController extends Controller
         return redirect('adminPanel/users');
     }
 
+    /*change users password*/
+    public function changePassword(Request $request){
+        $userUpdated = User::find($request->user-id);
+        $password = bcrypt($request->password);
+        $userUpdated = fill(['only' => ['password' =>$password]])->save();
+        return redirect('/adminPanel/users')->withFlashMessage('Password changed     successfully');
+    }
+
 }

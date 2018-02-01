@@ -21,8 +21,11 @@ Route::get('/', function () {
 #                       #
 #------------------------
 Route::group(['middleware' => ['web','admin']], function(){
+
+    #user
     Route::get('/adminPanel' ,'AdminController@index');
     Route::resource('/adminPanel/users','UserController');
+    Route::post('/adminPanel/users/changePassword/', 'UserController@changePassword');
 });
 
 

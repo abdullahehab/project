@@ -37,6 +37,7 @@
                     <div class="box-body">
                         <form class="form-horizontal" method="POST" action="{{ url('/adminPanel/users') }}">
                             @include('admin.user.form')
+
                         </form>
                     </div>
                 </div>
