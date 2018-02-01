@@ -34,9 +34,16 @@ class UserController extends Controller
 
 
     /* Edit to userInfo */
-    public function edit($id, User $user){
-        @$user = $user->find($id);
-        return view('admin.user.add',compact('user'));
+    public function edit($id){
+        $user = User::find($id);
+        return view('admin.user.edit',compact('user'));
+    }
+
+    /*update to userInfo*/
+    public function update($id , Request $request){
+        $updatedUser = User::find($id);
+        $updatedUser->fill($request->all())->save();
+        return redirect('adminPanel/users');
     }
 
 }

@@ -22,7 +22,7 @@ Edit user Info
     <ol class="breadcrumb">
         <li><a href="{{url('/adminPanel')}}"><i class="fa fa-dashboard"></i> Home </a></li>
         <li><a href="{{url('/adminPanel/users')}}">Member Control</a></li>
-        <li class="active"><a href="{{ url('/adminPanel/users/'. $user .'/edit') }}">
+        <li class="active"><a href="{{ url('/adminPanel/users/'. $user->id .'/edit') }}">
 
                 Edit user Info
                 ({{$user->name}})
@@ -47,7 +47,6 @@ Edit user Info
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-
                     {!! Form::model($user ,['route' => ['users.update' , $user->id] ,'method' =>'PATCH']) !!}
                         @include('admin.user.form')
                     {!! Form::close() !!}
